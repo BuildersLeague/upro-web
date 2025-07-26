@@ -17,7 +17,6 @@ export default function TrustedByExpertsSection() {
             <Button className="bg-green-500 hover:bg-green-600 text-black font-semibold px-8 py-6 text-lg rounded-full">
               Learn More
               <span className="sr-only">about at Home Coaching</span>
-
             </Button>
           </div>
           <div className="relative">
@@ -56,7 +55,6 @@ export default function TrustedByExpertsSection() {
             <Button className="bg-green-500 hover:bg-green-600 text-black font-semibold px-8 py-6 text-lg rounded-full">
               Explore Options
               <span className="sr-only">for flexible scheduling</span>
-
             </Button>
           </div>
         </div>
