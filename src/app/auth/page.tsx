@@ -65,7 +65,6 @@ const FloatingLabelInput = ({
 
 // New Footer Component matching the final design
 const AuthFooter = () => {
-  // Simple X icon for Twitter/X
   const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
