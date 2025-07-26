@@ -24,7 +24,7 @@ export default function TrustedByExpertsSection() {
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl overflow-hidden">
               <Image
                 src="/TrustedByExpertsPhotos/coach-Coaching.jpeg"
-                alt="Father and child playing soccer at home"
+                alt="Coach supervises two siblings with agility drills."
                 width={600}
                 height={400}
                 className="w-full h-auto"
@@ -41,7 +41,7 @@ export default function TrustedByExpertsSection() {
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl overflow-hidden">
               <Image
                 src="/TrustedByExpertsPhotos/child-practicing.jpeg"
-                alt="Child practicing soccer indoors"
+                alt="A focused child maneuvers their ball around a pylon."
                 width={600}
                 height={400}
                 className="w-full h-auto"
