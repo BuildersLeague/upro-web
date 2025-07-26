@@ -3,7 +3,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { User, Session, AuthError } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase";
-import { Session, User, AuthError } from "@supabase/supabase-js"; // Import AuthError for specificity
 
 // Define a specific type for the context value
 interface AuthContextType {
