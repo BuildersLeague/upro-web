@@ -80,6 +80,7 @@ export function TestimonialSection() {
       className="w-full py-16 md:py-20"
       style={{ backgroundColor: "#020d02" }}
       aria-labelledby="testimonials-heading"
+      role="region"
     >
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <h2
