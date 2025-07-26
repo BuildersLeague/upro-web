@@ -16,8 +16,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
-import { CheckCircle2, XCircle } from "lucide-react";
+import { CheckCircle2, XCircle, Facebook, Instagram } from "lucide-react"; // Added social icons
 import { toast } from "sonner";
+import Link from "next/link";
 
 // Define a specific interface for the component's props
 interface FloatingLabelInputProps {
@@ -62,6 +63,125 @@ const FloatingLabelInput = ({
   );
 };
 
+// New Footer Component matching the final design
+const AuthFooter = () => {
+  // Simple X icon for Twitter/X
+  const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      {...props}
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+
+  return (
+    <footer className="w-full bg-[#0A0A0A] text-gray-400 font-montserrat">
+      <div className="container mx-auto px-6 py-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          {/* Column 1: Logo and Socials */}
+          <div className="col-span-2 md:col-span-1">
+            <Link href="/" className="flex items-center space-x-2">
+              <Image
+                src="/u-pro_soccer.png"
+                alt="U-PRO Logo"
+                width={32}
+                height={32}
+              />
+              <span className="font-bold text-xl text-white">U-Pro</span>
+            </Link>
+            <div className="flex space-x-4 mt-6">
+              <Link href="#" className="hover:text-white">
+                <Facebook size={20} />
+              </Link>
+              <Link href="#" className="hover:text-white">
+                <Instagram size={20} />
+              </Link>
+              <Link href="#" className="hover:text-white">
+                <XIcon className="h-5 w-5" />
+              </Link>
+            </div>
+          </div>
+          {/* Column 2: Support */}
+          <div>
+            <h3 className="font-bold text-white tracking-wider mb-4">
+              Support
+            </h3>
+            <nav className="flex flex-col space-y-3">
+              <Link href="#" className="hover:text-white transition-colors">
+                FAQ
+              </Link>
+              <Link href="#" className="hover:text-white transition-colors">
+                Contact
+              </Link>
+              <Link href="#" className="hover:text-white transition-colors">
+                Terms
+              </Link>
+            </nav>
+          </div>
+          {/* Column 3: Community */}
+          <div>
+            <h3 className="font-bold text-white tracking-wider mb-4">
+              Community
+            </h3>
+            <nav className="flex flex-col space-y-3">
+              <Link href="#" className="hover:text-white transition-colors">
+                Forum
+              </Link>
+              <Link href="#" className="hover:text-white transition-colors">
+                Blog
+              </Link>
+              <Link href="#" className="hover:text-white transition-colors">
+                Instagram
+              </Link>
+            </nav>
+          </div>
+          {/* Column 4: Company */}
+          <div>
+            <h3 className="font-bold text-white tracking-wider mb-4">
+              Company
+            </h3>
+            <nav className="flex flex-col space-y-3">
+              <Link
+                href="/about"
+                className="hover:text-white transition-colors"
+              >
+                About Us
+              </Link>
+              <Link href="#" className="hover:text-white transition-colors">
+                Careers
+              </Link>
+              <Link href="#" className="hover:text-white transition-colors">
+                Press
+              </Link>
+            </nav>
+          </div>
+          {/* Column 5: Legal */}
+          <div>
+            <h3 className="font-bold text-white tracking-wider mb-4">Legal</h3>
+            <nav className="flex flex-col space-y-3">
+              <Link
+                href="/privacy"
+                className="hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link href="#" className="hover:text-white transition-colors">
+                Cookie Policy
+              </Link>
+            </nav>
+          </div>
+        </div>
+        <div className="mt-8 border-t border-gray-800 pt-6 text-center text-sm">
+          <p>© 2025 U-Pro Soccer. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
 function AuthPageContent() {
   const { user, loading, signIn, signUp } = useAuth();
   const router = useRouter();
@@ -100,7 +220,6 @@ function AuthPageContent() {
     setLastName("");
   }, [searchParams]);
 
-  // Use the specific FormEvent type for the form's submit event
   const handleAuthAction = async (e: FormEvent) => {
     e.preventDefault();
     if (isSignUp && !allRequirementsMet) {
@@ -158,13 +277,15 @@ function AuthPageContent() {
   }
 
   return (
-    <div
-      className="min-h-screen w-full flex flex-col items-center justify-center p-4 bg-cover bg-center"
-      style={{ backgroundImage: "url('/football.jpeg')" }}
-    >
-      <div className="absolute inset-0 bg-black opacity-60"></div>
-      <div className="relative z-10 w-full max-w-md">
-        <Card className="p-4 sm:p-6 rounded-2xl shadow-xl bg-white">
+    <div className="min-h-screen w-full flex flex-col">
+      <main
+        className="relative z-10 w-full flex-grow flex flex-col items-center justify-center p-4 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.9)), url('/football.jpeg')",
+        }}
+      >
+        <Card className="p-4 sm:p-6 rounded-2xl shadow-xl bg-white w-full max-w-md">
           <CardHeader className="flex flex-col items-center pb-4 text-center">
             <Image
               src="/u-pro_soccer.png"
@@ -267,7 +388,9 @@ function AuthPageContent() {
               : "Don't have an account? Sign Up"}
           </Button>
         </div>
-      </div>
+      </main>
+
+      <AuthFooter />
     </div>
   );
 }
