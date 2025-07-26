@@ -41,7 +41,7 @@ export function Hero() {
         >
           <a
             href="#"
-            className="px-6 py-3 text-lg font-bold rounded-full bg-gradient-to-r from-[#52b788] to-[#74c69d] shadow-lg hover:scale-105 transition-transform"
+            className="px-6 py-3 text-lg font-bold rounded-full bg-gradient-to-r from-[#4BA744] to-[#0d9447] shadow-lg hover:scale-105 transition-transform"
           >
             Start Free
           </a>
