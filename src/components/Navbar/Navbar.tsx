@@ -4,7 +4,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Asterisk } from "lucide-react";
 
-export function Navbar() {
+type NavbarProps = {
+  // if the user has not logged in, then the value is null
+  user?: string | null;
+};
+
+export function Navbar({ user }: NavbarProps) {
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-black">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -68,7 +73,7 @@ export function Navbar() {
             href="/auth?mode=signin"
             className="text-white hover:text-[#00FF3C]"
           >
-            Log in
+            {user ? user : "Log in"}
           </Link>
 
           <Button
