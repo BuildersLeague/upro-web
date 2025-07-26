@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { api } from "@/lib/api";
 import { useAuth } from "@/contexts/AuthContext";
-import type { Post, UserProfile, CreatePostRequest } from "@/types/api";
+import type { UserProfile } from "@/types/api";
 
 // Query keys for consistent cache management
 export const queryKeys = {

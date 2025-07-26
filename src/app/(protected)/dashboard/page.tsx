@@ -1,11 +1,8 @@
 "use client";
 
-import { useAuth } from "@/contexts/AuthContext";
 import { UserProfile } from "@/components/auth/UserProfile";
 
 export default function DashboardPage() {
-  const { user } = useAuth();
-
   return (
     <div className="min-h-[calc(100vh-4rem)] p-8">
       <div className="max-w-4xl mx-auto">
