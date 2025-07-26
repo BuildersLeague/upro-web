@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface Testimonial {
@@ -6,6 +6,7 @@ interface Testimonial {
   name: string;
   role: string;
   content: string;
+  avatar?: string; // Optional image URL
 }
 
 const testimonials: Testimonial[] = [
@@ -15,24 +16,32 @@ const testimonials: Testimonial[] = [
     role: "Parent of 10-year-old",
     content:
       "Our son's footwork and confidence have soared. He loves leveling up!",
+    avatar:
+      "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face", // Professional woman
   },
   {
     id: "2",
     name: "Oliver Kingston",
     role: "Junior player",
     content: "I feel like I have a coach with me everywhere.",
+    avatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face", // Young man
   },
   {
     id: "3",
     name: "Sophia Lin",
     role: "Soccer Enthusiast",
     content: "The app makes training easy and fun. Our family loves it!",
+    avatar:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face", // Woman
   },
   {
     id: "4",
     name: "Lucas Rivera",
     role: "Parent of 8-year-old",
     content: "U-Pro has transformed our living room into a soccer field.",
+    avatar:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face", // Man
   },
 ];
 
@@ -60,6 +69,12 @@ export function TestimonialSection() {
                 {/* Avatar and Info */}
                 <div className="flex items-center space-x-3">
                   <Avatar className="size-10 md:size-12">
+                    {testimonial.avatar && (
+                      <AvatarImage
+                        src={testimonial.avatar}
+                        alt={`${testimonial.name} profile picture`}
+                      />
+                    )}
                     <AvatarFallback className="bg-gray-600 text-white text-sm font-medium">
                       {testimonial.name
                         .split(" ")
