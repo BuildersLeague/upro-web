@@ -8,9 +8,9 @@ export default function TrustedByExpertsSection() {
       <section className="container mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+            <h2 className="text-5xl lg:text-6xl font-bold leading-tight">
               Expert Coaching at Home
-            </h1>
+            </h2>
             <p className="text-xl text-gray-300">
               No more hunting for good coaches.
             </p>
