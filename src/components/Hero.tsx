@@ -14,7 +14,8 @@ export function Hero() {
     <section className="relative bg-gradient-to-br from-[#1a4f3a] via-[#2d6a4f] to-[#40916c] min-h-screen flex items-center justify-center text-white overflow-hidden">
       <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
 
-      <div className="relative z-10 text-center px-4 py-8 max-w-3xl">
+      <div id="main-content"
+          className="relative z-10 text-center px-4 py-8 max-w-3xl">
         <h1
           className={`text-4xl md:text-6xl font-extrabold leading-tight bg-gradient-to-r from-[#95d5b2] via-[#74c69d] to-[#52b788] text-transparent bg-clip-text drop-shadow-lg transition-all duration-1000 ease-out ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
