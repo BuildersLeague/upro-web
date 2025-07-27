@@ -127,9 +127,9 @@ export function Navbar() {
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent 
-                className="w-56 bg-black border-white/20" 
-                align="end" 
+              <DropdownMenuContent
+                className="w-56 bg-black border-white/20"
+                align="end"
                 forceMount
               >
                 <DropdownMenuLabel className="font-normal text-white">
@@ -227,7 +227,10 @@ export function Navbar() {
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-black border-t border-white/20">
-          <div className="px-4 py-6 space-y-4" onClick={() => setIsMobileMenuOpen(false)}>
+          <div
+            className="px-4 py-6 space-y-4"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             {/* Mobile Navigation Links */}
             <div className="space-y-3">
               <Link
