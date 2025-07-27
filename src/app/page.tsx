@@ -2,6 +2,7 @@ import { TestimonialSection } from "@/components/TestimonialSection";
 import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
+import HowUProWorks from "@/components/HowUProWorks";
 import {
   Card,
   CardContent,
@@ -21,7 +22,7 @@ export default function Home() {
     <div className="w-full" style={{ backgroundColor: "#020d02" }}>
       {/* Testimonial Section - Full Width */}
       <Hero />
-
+      <HowUProWorks />
       <div className="min-h-[calc(100vh-4rem)] p-8">
         <TrustedByExpertsSection />
         <TestimonialSection />
